@@ -14,4 +14,25 @@ defmodule Adept.MapTest do
     }
   end
 
+  #--------------------------------------------------------
+  test "put_set puts non-nil values into the map" do
+    map =
+      %{}
+      |> Adept.Map.put_set( :abc, 123 )
+      |> Adept.Map.put_set( :def, 456 )
+
+    assert map == %{ abc: 123, def: 456 }
+  end
+
+  test "put_set does not put nil values into the map" do
+    map =
+      %{}
+      |> Adept.Map.put_set( :abc, nil )
+      |> Adept.Map.put_set( :def, nil )
+
+    assert map == %{}
+  end
+
+
+
 end
