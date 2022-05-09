@@ -3,7 +3,7 @@ defmodule Adept.String do
   def squash(string) do
     string
     |> String.trim
-    |> String.replace(Adept.Regex.multiple_spaces, " ")
+    |> String.replace(~r/\s{2,}/, " ")
   end
 
   # generate a bitstring that contains all the ascii characters
@@ -24,7 +24,7 @@ defmodule Adept.String do
   def random( len, into ) when len > 0 and is_bitstring(into) do
     into
     |> String.to_charlist()
-    |> Adept.List.random( len ) 
+    |> Adept.List.take_random( len ) 
     |> to_string()
   end
 
