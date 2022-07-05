@@ -1,6 +1,5 @@
 defmodule Adept.Map do
-
-  #--------------------------------------------------------
+  # --------------------------------------------------------
   @doc """
   Stringify the keys in a map
 
@@ -8,15 +7,14 @@ defmodule Adept.Map do
       iex> Adept.Map.stringify_keys( %{:a => 1 , "b" => 2, 3 => 3 } )
       %{"a" => 1 , "b" => 2, "3" => 3 }
   """
-  @spec stringify_keys( map :: map ) :: map
-  def stringify_keys( %{} = map ) do
-    Enum.reduce(map, %{}, fn({k,v}, acc) ->
-      Map.put( acc, to_string(k), v)
+  @spec stringify_keys(map :: map) :: map
+  def stringify_keys(%{} = map) do
+    Enum.reduce(map, %{}, fn {k, v}, acc ->
+      Map.put(acc, to_string(k), v)
     end)
   end
 
-
-  #--------------------------------------------------------
+  # --------------------------------------------------------
   @doc """
   Put a value into a map, but only if that value is not nil
 
@@ -37,9 +35,8 @@ defmodule Adept.Map do
       iex> Adept.Map.put_set( %{}, :abc, nil )
       %{}
   """
-  @spec put_set( map :: map, key :: any, value :: any ) :: map
-  def put_set( map, key, value )
-  def put_set( map, _key, nil ), do: map
-  def put_set( map, key, value ), do: Map.put( map, key, value )
-
+  @spec put_set(map :: map, key :: any, value :: any) :: map
+  def put_set(map, key, value)
+  def put_set(map, _key, nil), do: map
+  def put_set(map, key, value), do: Map.put(map, key, value)
 end
