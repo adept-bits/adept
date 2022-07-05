@@ -21,7 +21,7 @@ defmodule Adept.String do
   def random( len, :base_64 ), do: random_into_base( len, :encode64 )
   def random( len, :url ), do: random_into_base( len, :url_encode64 )
 
-  def random( len, into ) when len > 0 and is_bitstring(into) do
+  def random( len, into ) when len > 0 and is_binary(into) do
     into
     |> String.to_charlist()
     |> Adept.List.take_random( len ) 
