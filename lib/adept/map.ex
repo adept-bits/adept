@@ -26,8 +26,8 @@ defmodule Adept.Map do
       new_map =
         %{}
         |> Adept.Map.put_set( :abc, Map.get(attr, :abc) )
-        |> Adept.Map.put_set( :def, Map.get(attr, :abc) )
-        |> Adept.Map.put_set( :ghi, Map.get(attr, :abc) )
+        |> Adept.Map.put_set( :def, Map.get(attr, :def) )
+        |> Adept.Map.put_set( :ghi, Map.get(attr, :ghi) )
 
   ## Examples
 
