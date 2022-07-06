@@ -4,7 +4,6 @@ defmodule Adept.MixProject do
   @version "0.1.0"
   @url "https://github.com/adept-bits/adept"
 
-
   def project do
     [
       app: :adept,
@@ -49,5 +48,4 @@ defmodule Adept.MixProject do
       main: "readme"
     ]
   end
-
 end
